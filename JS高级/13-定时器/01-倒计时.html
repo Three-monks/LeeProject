@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">定时</button>
+    <button id="btn2">间隔</button>
+    <script>
+        //倒计时
+        var time=setTimeout(()=>{
+            console.log("倒计时")
+        },2000)//注册定时器
+
+        var time1=setInterval(()=>{
+            console.log("倒计时")
+        },1000)//注册间隔定时器
+        
+        var btn1=document.querySelector("#btn1")
+        var btn2=document.querySelector("#btn2")
+        console.log(btn1,btn2)
+        btn1.onclick=function(){
+            console.log("倒计时")
+            clearTimeout(time)
+        }
+        btn2.onclick=function(){
+            console.log("间隔倒计时")
+            clearInterval(time1)
+        }
+    </script>
+</body>
+</html>

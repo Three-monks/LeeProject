@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //获取时间
+        var time=new Date()
+        console.log(time)
+        var time=new Date(1000)
+        console.log(time)
+        var time=new Date(2000,6-1,22,8,8,8)
+        console.log(time)
+        var time=new Date("2000/6/22 10:10:10")
+        console.log(time)
+        var time=new Date("2023/1/24 10:10:10")
+        console.log(time.getFullYear()+"年"+(time.getMonth()+1)+"月"+time.getDate()+"日"+"星期"+time.getDay())
+        console.log(time.getTime()) //时间戳
+
+        //设置时间
+        console.log(time)
+        console.log(new Date(time.setFullYear(2000)))
+    </script>
+</body>
+</html>

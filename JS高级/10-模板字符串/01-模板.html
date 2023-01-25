@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var myhtml = `<li>11111111</li>
+        <li>22222222</li>
+        <li>33333333</li>`
+        document.write(myhtml)
+        var name="Lee"
+        var mtwrite=`My name is ${name} ${10+20} ${10>20?true:false}`
+        document.write(mtwrite)
+        var arr=["Lee","Leo","kkk"]
+        var myh=arr.map(item=>{
+            return `<li>my name is ${item}</li>`
+        })
+        document.write(myh.join(''))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //字面量定义
+        var arr = ["Lee", { "name": "lee", "age": "100" }, 100]
+        console.log(arr)
+        //函数定义
+        var arr1 = new Array("Lee", { "name": "lee", "age": "100" }, 100)
+        console.log(arr1)
+
+        var arr2 = new Array(10)
+        console.log(arr2)
+
+        //数组操作
+        var arr3 = [1, 2, 3, 56, 65]
+        console.log(arr3)
+        //清空数组
+        arr3.length = 0
+        console.log(arr3)
+
+        // 冒泡排序
+        var a1 = [1, 56, 9, 58, 2, 255]
+        console.log(a1)
+        for (var m = 0; m < a1.length - 1; m++) {
+            for (var i = 0; i < a1.length - 1 - m; i++) {
+                if (a1[i] > a1[i + 1]) {
+                    var temp = a1[i]
+                    a1[i] = a1[i + 1]
+                    a1[i + 1] = temp
+                }
+            }
+        }
+        console.log(a1)
+
+        //选择排序
+        var a1 = [1, 56, 9, 58, 2, 255]
+
+        for (var i = 0; i < a1.length - 1; i++) {
+            var minIndex = i
+            for (var m = i + 1; m < a1.length; m++) {
+                if (a1[m] < a1[minIndex]) {
+                    minIndex = m
+                }
+            }
+            var temp = a1[i]
+            a1[i] = a1[minIndex]
+            a1[minIndex] = temp
+        }
+        console.log(a1)
+
+        var arr = [1, 2]
+        console.log(arr)
+        //数组最后追加
+
+        var res= arr.push(5)
+        console.log(arr)
+        console.log("返回值--数组长度",res)
+        //删除数组最后一个
+        var pres=arr.pop()
+        console.log(arr)
+        console.log("返回值--元素",pres)
+        //前面追加
+        var res= arr.unshift(5)
+        console.log(arr)
+        console.log("返回值--数组长度",res)
+        //前面删除
+        var pres=arr.shift()
+        console.log(arr)
+        console.log("返回值--元素",pres)
+        //中间删除
+        var res= arr.splice(1,1) //splice(a,b)从索引a开始删除b个元素
+        console.log(arr)
+        console.log("返回值--元素",res)
+        //中间追加
+        var pres= arr.splice(1,0,5,6,8,7) //splice(a,b)从索引a开始删除b个元素
+        console.log(arr)
+        console.log("返回值--元素",pres)
+        //倒序排序
+        console.log("原：",arr);
+        console.log("倒序：",arr.reverse());
+        console.log("升序：",arr.sort(function(a,b){return a-b}));
+        console.log("降序：",arr.sort(function(a,b){return b-a}));
+        //数组拼接 不影响原数组
+        var a=[1,2,3]
+        var b=['a','b','c']
+        var c=a.concat(b)
+        var d=a.concat()//复制
+        console.log(a,b,c,d)
+        //转字符
+        var arr=[]
+        for(var i=0;i<5;i++){
+            arr.push("<li>"+i+"</li>")
+        }
+        document.write(arr)
+        document.write(arr.join(""))
+        //字符截取
+        var arr=[1,2,5,6,98,4,5,2]
+        var arr1=arr.slice(3,6) //slice(a,b) 从索引a截取到索引b
+        var arr2=arr.slice(3,-1) //slice(a,-b) 从索引a截取到数组长度-b
+        console.log(arr,arr1,arr2)
+        //indexOf()
+        var res=arr.indexOf(2) //从前面开始找 返回找到第一个的索引  返回-1---没找到 
+        var res1=arr.lastIndexOf(2) //从后面开始 返回找到第一个的索引  返回-1---没找到 
+        console.log(res,res1);
+        //数组去重 循环
+        var arr=[1,2,3,5,6,12,2,32,4,2,1,4,1,3]
+        var arr1=[]
+        for(var i=0;i<arr.length; i++){
+            if(arr1.indexOf(arr[i])===-1){
+                arr1.push(arr[i])
+            }
+        }
+        console.log(arr,arr1)
+        //new Set() 去重
+        var arr=[1,2,3,5,6,12,2,32,4,2,1,4,1,3]
+        var set1=new Set(arr)
+        console.log(set1)
+        var arr1=Array.from(set1)
+        console.log(arr1)
+        //对象去重
+        var arr=[1,2,3,5,6,12,2,32,4,2,1,4,1,3]
+        var obj2=new Object(arr)
+        var obj={}
+        var arr1=[]
+        for(var i=0;i<arr.length;i++){
+            obj[arr[i]]="kkk"
+        }
+        console.log(obj)
+        for(var i in obj){
+            // arr1.push(Number(i))
+            arr1.push(i-0)
+        }
+        console.log(arr1)
+        //数组遍历 forEach()
+        var arr=["aaa","bbb","ccc","ddd"]
+        arr.forEach(function(item,index,arr){
+            console.log(item,index,arr)
+        })
+        //数组映射 map()
+        var arr=["aaa","bbb","ccc","ddd"]
+        arr.map(function(item){
+            console.log(item)
+        })
+        //过滤 filter
+        var arr=[1,225,66,544,52,44,5,1,5,8]
+        var arr1=arr.filter(function(item){
+            return item>10
+        })
+        console.log(arr1)
+        //every 每一个都满足条件返回true 不然返回false
+        var arr=[1,225,66,544,52,44,5,1,5,8]
+        var arr1=arr.every(function(item){
+            return item>10
+        })
+        console.log(arr1)
+        //some 只要有一个满足条件返回true 不然返回false
+        var arr=[1,225,66,544,52,44,5,1,5,8]
+        var arr1=arr.some(function(item){
+            return item>10
+        })
+        console.log(arr1)
+        //find 找到第一个满足条件的元素
+        var arr=[1,225,66,544,52,44,5,1,5,8]
+        var arr1=arr.find(function(item){
+            return item>10
+        })
+        console.log(arr1)
+        //reduce() 累加 prev上一项 item下一项
+        var arr=[1,225,66,544,52,44,5,1,5,8]
+        var arr1=arr.reduce(function(prev,item){
+            return item+prev
+        },0)
+        console.log(arr1)
+    </script>
+</body>
+
+</html>
